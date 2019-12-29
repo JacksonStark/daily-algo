@@ -7,6 +7,24 @@
 
 // You can find some examples in the test fixtures.
 
-function humanReadable(seconds) {
+function humanReadable(totalSeconds) {
+  let hours = totalSeconds / 60 / 60;
+  let minutes = (hours % 1) * 60;
+  let seconds = (minutes % 1) * 60;
 
+  function pad(number) {
+    return number < 10 ? "0" + number : number
+  }
+
+  let confirmedHours = hours > 99 ? 99 : pad(Math.floor(hours))
+  let confirmedMinutes = hours > 99 ? 59 : pad(Math.floor(minutes))
+  let confirmedSeconds = hours > 99 ? 59 : pad(Math.round(seconds))
+
+ return `${confirmedHours}:${confirmedMinutes}:${confirmedSeconds}`;
 }
+
+console.log("FINAL AMOUNT |> ", humanReadable(30000))
+
+module.exports = humanReadable
+
+

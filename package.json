@@ -1,0 +1,26 @@
+{
+  "name": "daily-algo",
+  "version": "1.0.0",
+  "description": "Extensive Practice with Algorithmic Problems",
+  "main": "day_1.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacksonStark/daily-algo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JacksonStark/daily-algo/issues"
+  },
+  "homepage": "https://github.com/JacksonStark/daily-algo#readme",
+  "dependencies": {
+    "chai": "^4.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.2"
+  }
+}
