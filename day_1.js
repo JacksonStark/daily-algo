@@ -23,8 +23,8 @@ function humanReadable(totalSeconds) {
  return `${confirmedHours}:${confirmedMinutes}:${confirmedSeconds}`;
 }
 
-console.log("FINAL AMOUNT |> ", humanReadable(30000))
 
 module.exports = humanReadable
 
+console.log("FINAL AMOUNT |> ", humanReadable(278994))
 
