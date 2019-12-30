@@ -14,7 +14,7 @@ function equalSidesOfArray(arr) {
 
     for(let j = i+2; j < arr.length; j++) {
       rightTotal += arr[j];
-      
+
       if(arr[i+1] === leftTotal && arr[i+1] === rightTotal) {
         return arr[i+1]
       }
