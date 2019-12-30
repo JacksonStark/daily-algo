@@ -13,11 +13,9 @@ defmodule Day_1 do
   
   def humanReadable(totalSeconds) do
     hours = :math.floor(totalSeconds / 3600)
-    IO.puts "#{hours} hours"
     minutes = :math.floor(rem(totalSeconds, 3600) / 60)
-    IO.puts "#{minutes} minutes"
     seconds = :math.floor(rem(totalSeconds, 60))
-    IO.puts "#{minutes} seconds"
+    
     "#{hours}:#{minutes}:#{seconds}"
   end
 
