@@ -5,8 +5,22 @@
 // For example:
 // anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']) => ['carer', 'racer']
 
+// EQUAL ARRAY HELPER FUNCTION (anagrams was getting to messy)
+function equalArray(array1, array2) {
+  if (array1.length !== array2.length) {
+    return false
+  };
 
+  for (const [ i ] of array1.entries()) {
+    if (array1[i] !== array2[i]) {
+      return false;
+    }
+  };
 
+  return true;
+}
+
+// ANAGRAMS MAIN FUNCTION (fully optimized for performance)
 function anagrams(word, words) {
 
   matchingWords = [];
@@ -20,23 +34,7 @@ function anagrams(word, words) {
       matchingWords.push(word)
     }
   });
-  
   return matchingWords;
-  
-  }
+}
 
-  function equalArray(array1, array2) {
-    if (array1.length !== array2.length) {
-      return false
-    };
-
-    for (const [ i ] of array1.entries()) {
-      if (array1[i] !== array2[i]) {
-        return false;
-      }
-    };
-
-    return true;
-  }
-
-  console.log("FINAL RESULT |>  ", anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']))
+console.log("FINAL RESULT |>  ", anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']))
