@@ -16,23 +16,16 @@
 
 function cakes(recipe, supplied, count = 0) {
   let available = {...supplied}
-  console.log(available)
+
+  // reduce available amount
+  Object.keys(recipe).map(key => available[key] -= recipe[key])
   
-  for (const key in recipe) {
-//     if (!available[key]) { //  item doesnt exist, then STOP
-//       return count;
-//     } else {
-      available[key] -= recipe[key] //  reduce available amount
-//     }
+  //  if all available food items are above 0 STILL, then RECURSE
+  if (Object.values(available).every(v => v >= 0)) {
+    return cakes(recipe, available, count + 1)
   }
   
-  if (!Object.values(available).every(v => v > 0)) { //  if all available food items are above 0, recurse
-    return count
-  }
-  
-  console.log(count)
-  
-  return cakes(recipe, available, count + 1)
+  return count
 }
 
 console.log("OUTPUT |>  ", cakes({"flour":500,"sugar":200,"eggs":1}, {"flour":1200,"sugar":1200,"eggs":5,"milk":200}))
