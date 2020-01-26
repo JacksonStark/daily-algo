@@ -15,14 +15,13 @@
 
 
 function cakes(recipe, supplied, count = 0) {
-  let available = {...supplied}
-
+  
   // reduce available amount
-  Object.keys(recipe).map(key => available[key] -= recipe[key])
+  Object.keys(recipe).map(key => supplied[key] -= recipe[key])
   
   //  if all available food items are above 0 STILL, then RECURSE
-  if (Object.values(available).every(v => v >= 0)) {
-    return cakes(recipe, available, count + 1)
+  if (Object.values(supplied).every(v => v >= 0)) {
+    return cakes(recipe, supplied, count + 1)
   }
   
   return count
