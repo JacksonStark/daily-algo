@@ -31,7 +31,7 @@ const companySalesData = [
 const calculateSalesTax = function(salesData, taxRates) {
   let result = {}
 
-  salesData.map( x => {
+  salesData.map( (x) => {
     let sumTotal = x.sales.reduce((a,c) => a+c)
 
     if (result[x.name]) {
