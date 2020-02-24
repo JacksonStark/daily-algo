@@ -36,11 +36,9 @@ const sumIntervals = (intervals) => {
       if (stackChanged === false) {
         acc.push(cur)
       }
-
     }
 
     return acc
-    
   }, [])
 
   let compress = result.reduce((acc, cur) => acc + (cur[1] - cur[0]), 0)
