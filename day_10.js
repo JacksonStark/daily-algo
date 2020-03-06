@@ -12,6 +12,7 @@
 
 const sumIntervals = (intervals) => {
 
+  // sort array of interval ranges (inner arrays) to prep for Stark's reduce !!
   let sortedIntervals = intervals.sort((a,b) => a[0] - b[0])
 
   let result = sortedIntervals.reduce((acc, cur) => {
