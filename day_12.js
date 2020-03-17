@@ -10,3 +10,13 @@
 // foo0042 -> foo0043
 // foo099 -> foo100
 
+function incrementString(str) {
+  // split on first occurence (^) of digit (\d) and everything beyond that (+)
+  let re = /([1-9]+)/
+  let word = str.split(re)[0];
+  let number = Number( str.split(re)[1] )
+
+  return word + (number + 1);
+}
+
+console.log("RESULT ✅ |>  ", incrementString('foo099'))
