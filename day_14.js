@@ -8,5 +8,20 @@
 
 function moveZeros(arr) {
 
+  let zeroCount = [];
+
+  let arranged = arr.filter(char => {
+    
+    if (char === 0) {
+      zeroCount.push(0)
+    } else {
+      return char;
+    }
+
+  })
+
+  return [ ...arranged, ...zeroCount ]
+
 }
 
+console.log('✅ RESULT |> ', moveZeros([false,1,0,1,2,0,1,3,"a"]));
